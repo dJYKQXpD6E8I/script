@@ -7,7 +7,6 @@ docker remove nginx -f
 docker remove nginx-proxy-manager -f
 
 docker run -d --name nginx --restart=always \
--m 512m \
 --network=host \
 -v $HOME/docker/nginx/data:/data \
 -v $HOME/docker/nginx/letsencrypt:/etc/letsencrypt \

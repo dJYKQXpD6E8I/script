@@ -9,3 +9,6 @@ docker run -d \
   --restart=always \
   --log-opt max-size=1m \
   laoyutang/clash-and-dashboard
+
+docker cp cron clash:/etc/cron.d
+docker exec clash sh -c "echo 'crond' >> /root/.rc && crond"
