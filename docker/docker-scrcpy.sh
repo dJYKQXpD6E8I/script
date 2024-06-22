@@ -8,9 +8,5 @@ docker remove ws-scrcpy -f
 
 docker network create scrcpy
 docker run -d --name scrcpy --restart=always \
---network=scrcpy \
 -m 512m \
 scavin/ws-scrcpy
-
-docker network connect frps scrcpy
-docker exec -d scrcpy adb connect frps:49565
