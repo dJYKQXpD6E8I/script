@@ -16,6 +16,7 @@ docker network create nextcloud
 
 docker run --name nextcloud-server -d --restart=always \
 -m 512m \
+--add-host=host.docker.internal:host-gateway \
 --network nextcloud \
 nextcloud
 
