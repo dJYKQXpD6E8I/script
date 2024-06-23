@@ -16,14 +16,11 @@ docker network create nextcloud
 
 docker run --name nextcloud-server -d --restart=always \
 -m 512m \
---add-host=host.docker.internal:host-gateway \
---network nextcloud \
 nextcloud
 
 docker run --name nextcloud-database -d --restart=always \
---network nextcloud \
 -e MYSQL_ROOT_PASSWORD=$PASSWD_DB \
-mysql:8.0
+mysql:5.7
 
 sleep 5
 echo "enter password: \"$PASSWD_DB\""

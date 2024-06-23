@@ -1,5 +1,5 @@
-docker network connect compass-kids squid
-docker network connect frps squid
+#! /bin/bash
 
-docker network create squid
-docker network connect squid squid
+docker network create --subnet=172.31.0.0/16 squid
+docker network disconnect squid squid
+docker network connect squid --ip=172.31.0.2 squid
