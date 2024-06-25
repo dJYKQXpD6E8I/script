@@ -12,15 +12,14 @@ docker remove nextcloud-server -f
 docker remove nextcloud-aio-mastercontainer -f
 docker remove nextcloud-database -f
 
-docker network create nextcloud
-
 docker run --name nextcloud-server -d --restart=always \
+-v /mnt:/home/www/disk \
 -m 512m \
 nextcloud
 
 docker run --name nextcloud-database -d --restart=always \
 -e MYSQL_ROOT_PASSWORD=$PASSWD_DB \
-mysql:5.7
+mysql:8.0
 
 sleep 5
 echo "enter password: \"$PASSWD_DB\""

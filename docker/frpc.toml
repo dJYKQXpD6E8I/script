@@ -16,3 +16,10 @@ type = "tcp"
 localIP = "172.17.0.1"
 localPort = 445
 remotePort = 445
+
+[[proxies]]
+name = "nextcloud"
+type = "tcp"
+localIP = "172.18.0.2"
+localPort = 80
+remotePort = 80
