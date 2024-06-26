@@ -7,8 +7,11 @@ docker remove clash -f
 docker run -d \
   --name clash \
   --restart=always \
+  -e ENV=/root/.ashrc \
   --log-opt max-size=1m \
   laoyutang/clash-and-dashboard
 
-docker cp cron clash:/etc/crontabs/
-docker exec clash sh -c "echo 'crond -f' >> /root/.rc && crond"
+docker cp clash-update.sh clash:/root/
+docker exec clash sh -c 'echo "crontab -l && crond" > /root/.ashrc &&
+echo "* * * * * ash /root/clash-update.sh" >> /etc/crontabs/root &&
+crond -f'
