@@ -5,4 +5,3 @@ docker network disconnect scrcpy scrcpy
 docker network connect scrcpy --ip=172.26.0.2 scrcpy
 
 docker network connect frps scrcpy
-docker exec scrcpy adb connect frps:49565
