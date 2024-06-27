@@ -6,7 +6,6 @@ read -n 1 -s
 docker remove scrcpy -f
 docker remove ws-scrcpy -f
 
-docker network create scrcpy
 docker run -d --name scrcpy --restart=always \
 -m 512m \
 scavin/ws-scrcpy

@@ -23,3 +23,17 @@ type = "tcp"
 localIP = "172.18.0.2"
 localPort = 80
 remotePort = 80
+
+[[proxies]]
+name = "photoprism"
+type = "tcp"
+localIP = "172.21.0.2"
+localPort = 2342
+remotePort = 2342
+
+[[proxies]]
+name = "scrcpy"
+type = "tcp"
+localIP = "172.26.0.2"
+localPort = 8000
+remotePort = 8000

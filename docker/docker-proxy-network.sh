@@ -1,7 +1,7 @@
 #! /bin/bash
 
-proxies='v2ray clash squid'
-servers='frps nextcloud compass-kids scrcpy clash'
+proxies='v2ray clash squid frpc'
+servers='frps nextcloud compass-kids scrcpy clash photoprism'
 
 for proxy in $proxies
 do
