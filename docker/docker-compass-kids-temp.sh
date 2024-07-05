@@ -2,7 +2,8 @@
 
 SERVER=compass-kids
 CLONE='git@github.com:dJYKQXpD6E8I/compass-kids.git'
-PASSWD_DB='5qjVVLN8yy7y'
+# PASSWD_DB 数据库密码
+source 
 
 for i in {1..3}
 do

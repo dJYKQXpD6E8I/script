@@ -2,7 +2,8 @@
 
 SERVER=compass-kids
 CLONE='git@github.com:dJYKQXpD6E8I/compass-kids.git'
-PASSWD_DB='5qjVVLN8yy7y'
+# PASSWD_DB 数据库密码
+source docker-compass-kids.conf
 
 for i in {1..3}
 do
@@ -35,15 +36,13 @@ git clone $CLONE &&
 cd $SERVER &&
 npm install &&
 npm install pm2 -g &&
-pm2 start vapp/server.js --watch &&
-pm2 startup &&
-pm2 save"
+pm2 start vapp/server.js --watch"
 
 docker run -d --name $SERVER-database --restart=always \
 --network $SERVER \
 -v $HOME/script:/root/script \
 -e MYSQL_ROOT_PASSWORD=$PASSWD_DB \
-mysql:5.7
+mysql:8.0
 
 sleep 5
 echo "password: \"$PASSWD_DB\""

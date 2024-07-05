@@ -1,0 +1,11 @@
+serverAddr = "1.1.1.1"
+serverPort = 0
+auth.method = "token"
+auth.token = ""
+
+[[proxies]]
+name = "server"
+type = "tcp"
+localIP = "1.1.1.1"
+localPort = 0
+remotePort = 0

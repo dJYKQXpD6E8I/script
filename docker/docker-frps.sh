@@ -11,3 +11,5 @@ stilleshan/frps
 
 docker cp frps.toml frps:/frp/
 docker restart frps
+
+bash docker-frps-network.sh

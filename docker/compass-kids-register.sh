@@ -1,6 +1,6 @@
 #! /bin/bash
 
-FILE='kids.xlsx'
+FILE='compass-kids-register.xlsx'
 
 SERVER='compass-kids'
 docker cp $FILE $SERVER-server:/root/$SERVER/dashboard/custom/

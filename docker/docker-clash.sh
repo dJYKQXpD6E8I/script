@@ -15,3 +15,5 @@ docker cp clash-update.sh clash:/root/
 docker exec clash sh -c 'echo "crontab -l && crond" > /root/.ashrc &&
 echo "* * * * * ash /root/clash-update.sh" >> /etc/crontabs/root &&
 crond -f'
+
+bash docker-clash-network.sh
