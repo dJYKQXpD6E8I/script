@@ -10,7 +10,8 @@ docker run -d \
   --name photoprism \
   --security-opt seccomp=unconfined \
   --security-opt apparmor=unconfined \
-  -e PHOTOPRISM_ADMIN_PASSWORD="insecure" \
+  -e PHOTOPRISM_ADMIN_USER="4eX6Y8qfk18M" \
+  -e PHOTOPRISM_ADMIN_PASSWORD="66h!#^>JyWn<" \
   -v /photoprism/storage \
   -v /mnt/e/照片:/photoprism/originals \
   photoprism/photoprism

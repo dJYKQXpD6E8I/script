@@ -1,0 +1,34 @@
+version: '3.4'
+
+x-common-variables: &common-variables
+   ORIGINS: "'http://joplin.compass-kids.com', 'http://joplin.localhost'"
+   JOPLIN_LOGIN_REQUIRED: True
+
+services:
+  django-joplin-vieweb:
+    image: gri38/django-joplin-vieweb:latest
+    depends_on:
+      - joplin-terminal-xapi
+    environment:
+       <<: *common-variables
+    restart: unless-stopped
+    volumes:
+      - joplin:/root/.config/joplin:ro
+      - joplin-vieweb:/root/.config/joplin-vieweb
+    networks:
+      - joplin-net
+
+  joplin-terminal-xapi:
+    image: gri38/joplin-terminal-xapi:latest
+    restart: unless-stopped
+    volumes:
+      - joplin:/root/.config/joplin
+    networks:
+      - joplin-net
+
+volumes:
+  joplin:
+  joplin-vieweb:
+
+networks:
+  joplin-net: {}
